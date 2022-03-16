@@ -35,7 +35,7 @@ jobs:
         uses: docker/checkout@v2
         with:
           username: ${{ secrets.DOCKER_USERNAME }}
-          PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+          password: ${{ secrets.DOCKER_PASSWORD }}
           repository: treyman/next
           
       - name: List corrent folder
