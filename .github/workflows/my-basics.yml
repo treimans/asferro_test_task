@@ -1,11 +1,12 @@
 # ==============================================================
-# GitHub Actions test task
+# CI-CD Pipeline to DockerHub test task
 # Copyleft (C) Sergey Treiman 2022
 # ==============================================================
-name: Mi-GitHubActions-test
+name: CI-CD-Pipeline-to-DockerHub-test
 env:
   APPLICATION_NAME   : "MyFlask"
-  DEPLOY_PACKAGE_NAME: "flask-deploy-ver-${{github.sha}}"
+  ENWIRONMENT_NAME   : "MyFlask-env"
+  DEPLOY_PACKAGE_NAME: "flask_app_${{github.sha}}.zip"
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
@@ -18,15 +19,16 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  My-testing:
+  my_ci_part:
     runs-on: ubuntu-latest
+    
     env:
       VAR1: "Thes is Job Level Variables1"
       VAR2: "Thes is Job Level Variables2"
       
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - name: Git colne ny repo
+      - name: Git colne my repo
         uses: actions/checkout@v2
         
       - name: Print env vars
