@@ -3,7 +3,9 @@
 # Copyleft (C) Sergey Treiman 2022
 # ==============================================================
 name: Mi-GitHubActions-test
-
+env:
+  APPLICATION_NAME : "MyFlask"
+  DEPLOY_PACKAGE_NAME: "flask-deploy-ver-${{github.sha}}"
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
   push:
@@ -32,3 +34,6 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
+      - name: Execure few commands
+        run: |
+          echo "Application name: ${{env.APPLICATION_NAME}}"
