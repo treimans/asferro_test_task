@@ -37,4 +37,5 @@ jobs:
           
       - name: Execure few commands
         run: |
-          echo "Application name: ${{ env.DEPLOY_PACKAGE_NAME }}"
+          echo "Application name: ${{ env.APPLICATION_NAME }}"
+          echo "Deplyo pakcage name is: ${{ env.DEPLOY_PACKAGE_NAME }}"
