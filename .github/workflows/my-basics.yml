@@ -1,7 +1,7 @@
-#==============================================================
+# ==============================================================
 # GitHub Actions test task
 # Copyleft (C) Sergey Treiman 2022
-#==============================================================
+# ==============================================================
 name: Mi-GitHubActions-test
 
 on:
@@ -17,8 +17,7 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   build:
-    runs-on: ubi8
-    # ubuntu-latest
+    runs-on: ubuntu-latest
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
