@@ -20,11 +20,22 @@ on:
 jobs:
   My-testing:
     runs-on: ubuntu-latest
-
+    env:
+      VAR1: "Thes is Job Level Variables1"
+      VAR2: "Thes is Job Level Variables2"
+      
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Git colne ny repo
         uses: actions/checkout@v2
+        
+      - name: Print env vars
+        run: |
+          echo "Var1 = ${{env.VAR1}}"
+          echo "Var2 = ${{env.VAR2}}"
+          echo "Var3 = $LOCAL_VAR"
+        env:
+          LOCAL_VAR: "This is Superr local Enviromment variable"
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
@@ -47,4 +58,4 @@ jobs:
       - name: Lets test some packages iof the are here
         run: |
           aws --version
-          zip
+          zip --version
