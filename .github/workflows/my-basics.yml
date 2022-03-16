@@ -23,7 +23,8 @@ jobs:
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
+      - name: Git colne ny repo
+        uses: actions/checkout@v2
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
@@ -39,3 +40,11 @@ jobs:
         run: |
           echo "Application name: ${{ env.APPLICATION_NAME }}"
           echo "Deplyo pakcage name is: ${{ env.DEPLOY_PACKAGE_NAME }}"
+          
+      - name: List corrent folder
+        run: ls -la
+        
+      - name: Lets test some packages iof the are here
+        run: |
+          aws --version
+          zip
