@@ -4,7 +4,7 @@
 # ==============================================================
 name: Mi-GitHubActions-test
 env:
-  APPLICATION_NAME : "MyFlask"
+  APPLICATION_NAME   : "MyFlask"
   DEPLOY_PACKAGE_NAME: "flask-deploy-ver-${{github.sha}}"
 on:
   # Triggers the workflow on push or pull request events but only for the main branch
