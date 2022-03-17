@@ -23,7 +23,6 @@ jobs:
       - name: Git colne my repo
         uses: actions/checkout@v2
 
-          
       - name: Configure my DockerHub Credentials
         uses: docker/login-action@v1
         with:
